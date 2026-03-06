@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Architecture | RealKingHubs</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  
+  <header>
+    <nav class="navbar">
+      <div class="logo">RealKi<span>ngHubs</span></div>
+
+      <ul class="nav-links">
+<li><a href="index.html#home">Home</a></li>
+<li><a href="index.html#about">About</a></li>
+<li><a href="index.html#skills">Skills</a></li>
+<li><a href="index.html#projects">Projects</a></li>
+<li><a href="architecture.html">Architecture</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+      </ul>
+
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= ARCHITECTURE SECTION ================= -->
+  <section class="architecture-container">
+    <h1>Cloud Architecture Designs</h1>
+
+    <div class="architecture-grid">
+
+      <!-- Diagram 1 -->
+      <div class="arch-card">
+        <iframe
+          src="https://github.com/user-attachments/assets/0b894c66-d199-461a-8262-983800265dc9"
+          frameborder="0"></iframe>
+        <h3>AWS 3-Tier Architecture</h3>
+        <p>ALB → EC2 → RDS with Auto Scaling</p>
+        <a href="diagrams/aws-architecture.drawio" download class="btn">Download Diagram</a>
+      </div>
+
+      <!-- Diagram 2 -->
+      <div class="arch-card">
+        <iframe
+          src="https://viewer.diagrams.net/?highlight=0000ff&nav=1&title=k8s-cluster#Uhttps://raw.githubusercontent.com/demo/demo/main/k8s-cluster.drawio"
+          frameborder="0"></iframe>
+        <h3>Kubernetes Cluster</h3>
+        <p>Ingress → Pods → Services → Persistent Volumes</p>
+        <a href="diagrams/k8s-cluster.drawio" download class="btn">Download Diagram</a>
+      </div>
+
+      <!-- Diagram 3 -->
+      <div class="arch-card">
+        <iframe
+          src="https://viewer.diagrams.net/?highlight=0000ff&nav=1&title=serverless-arch#Uhttps://raw.githubusercontent.com/demo/demo/main/serverless-arch.drawio"
+          frameborder="0"></iframe>
+        <h3>Serverless Architecture</h3>
+        <p>API Gateway → Lambda → DynamoDB</p>
+        <a href="diagrams/serverless-arch.drawio" download class="btn">Download Diagram</a>
+      </div>
+
+      <!-- Diagram 4 -->
+      <div class="arch-card">
+        <iframe
+          src="https://viewer.diagrams.net/?highlight=0000ff&nav=1&title=ci-cd-pipeline#Uhttps://raw.githubusercontent.com/demo/demo/main/ci-cd-pipeline.drawio"
+          frameborder="0"></iframe>
+        <h3>CI/CD Pipeline</h3>
+        <p>Git → Jenkins → Docker → Kubernetes</p>
+        <a href="diagrams/ci-cd-pipeline.drawio" download class="btn">Download Diagram</a>
+      </div>
+
+      <!-- Diagram 5 -->
+      <div class="arch-card">
+        <iframe
+          src="https://viewer.diagrams.net/?highlight=0000ff&nav=1&title=multi-region#Uhttps://raw.githubusercontent.com/demo/demo/main/multi-region.drawio"
+          frameborder="0"></iframe>
+        <h3>Multi-Region Deployment</h3>
+        <p>High Availability with AWS Regions and Route53</p>
+        <a href="diagrams/multi-region.drawio" download class="btn">Download Diagram</a>
+      </div>
+
+      <!-- Diagram 6 -->
+      <div class="arch-card">
+        <iframe
+          src="https://viewer.diagrams.net/?highlight=0000ff&nav=1&title=network-security#Uhttps://raw.githubusercontent.com/demo/demo/main/network-security.drawio"
+          frameborder="0"></iframe>
+        <h3>Network & Security Architecture</h3>
+        <p>VPC, Subnets, Security Groups, NACLs</p>
+        <a href="diagrams/network-security.drawio" download class="btn">Download Diagram</a>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+
+</html>

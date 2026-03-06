@@ -1,0 +1,491 @@
+/* ================= GLOBAL STYLES ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+.section {
+  padding: 80px 10%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #38bdf8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================= NAVBAR ================= */
+
+header {
+  position: fixed;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.logo span {
+  color: #38bdf8;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #f1f5f9;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+}
+
+.hero span {
+  color: #38bdf8;
+}
+
+.hero h2 {
+  margin: 20px 0;
+  font-weight: 400;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+/* ================= BUTTON ANIMATIONS ================= */
+
+.btn {
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 10px;
+  display: inline-block;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Smooth spring-like transition */
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+}
+
+/* Hover: Lift effect and shadow glow */
+.btn:hover {
+  transform: translateY(-3px);
+  /* Lifts the button up */
+  box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+  /* Adds a soft glow */
+}
+
+/* Active: Pressed down effect */
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.primary {
+  background: #38bdf8;
+  color: #0f172a;
+  border: 1px solid #38bdf8;
+}
+
+/* Primary Button "Pulse" Animation */
+.primary:hover {
+  background: #7dd3fc;
+  /* Lightens the blue slightly */
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+}
+
+/* Adding a "shimmer" effect to the primary button */
+.primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: rotate(45deg);
+  transition: 0.5s;
+  display: block;
+}
+
+.primary:hover::after {
+  left: 120%;
+  /* Slides the white shimmer across the button on hover */
+}
+
+.secondary {
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+  background: transparent;
+}
+
+/* Secondary Button: Fill-in effect */
+.secondary:hover {
+  background: rgba(56, 189, 248, 0.1);
+  /* Subtle fill to keep it secondary */
+}
+
+/* ================= ABOUT ================= */
+
+.about-container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-image img {
+  width: 250px;
+  border-radius: 10px;
+}
+
+/* Container styling */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  /* Default: Image on top, text below (Mobile) */
+  align-items: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Desktop Layout (Screens wider than 768px) */
+@media (min-width: 768px) {
+  .about-container {
+    flex-direction: row;
+    /* Flips the order: Text Left, Image Right */
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .about-image,
+  .about-text {
+    flex: 1;
+    /* Gives both sides equal width */
+  }
+}
+
+/* Optional: Image styling to keep it responsive */
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* ================= SKILLS ================= */
+
+.skill {
+  margin-bottom: 25px;
+}
+
+.skill-bar {
+  background: #1e293b;
+  height: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-level {
+  height: 100%;
+  width: 0;
+  background: #38bdf8;
+  transition: width 2s ease;
+}
+
+/* ================= PROJECTS ================= */
+
+.project-grid {
+  display: grid;
+  /* minmax(250px, 1fr) ensures cards are at least 250px but fill available space */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  align-items: stretch;
+  /* Ensures all cards in a row have the same height */
+}
+
+.project-card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 10px;
+  transition: 0.3s;
+
+  /* FIXES START HERE */
+  height: auto;
+  /* Allows the card to grow with the text */
+  display: flex;
+  flex-direction: column;
+  /* Stacks content vertically */
+  word-wrap: break-word;
+  /* Breaks long words like 'extraordinarilylonglink.com' */
+  overflow-wrap: break-word;
+  /* Modern version of word-wrap */
+  hyphens: auto;
+  /* Optional: adds hyphens when breaking words */
+}
+
+.project-card p {
+  margin-bottom: 15px;
+  flex-grow: 1;
+  /* Pushes the .tech links to the bottom of the card */
+  line-height: 1.6;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tech {
+  display: block;
+  margin-top: auto;
+  /* Sticks tech labels to the bottom of the card */
+  color: #38bdf8;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+/* ================= CONTACT ================= */
+
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 8px;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #007bff;
+}
+
+.status-msg {
+  margin-top: 15px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* ================= SOCIAL LINKS ================= */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #38bdf8;
+  /* Or your primary color */
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1e293b;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: -100%;
+    flex-direction: column;
+    background: #1e293b;
+    width: 200px;
+    padding: 20px;
+    transition: 0.3s;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+}
+
+
+
+
+/* Typing Cursor Animation */
+.cursor {
+  color: #38bdf8;
+  font-weight: bold;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+
+/* Architecture Page Styles */
+.architecture-container {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.architecture-container h1 {
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+}
+
+.architecture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.arch-card {
+  text-align: center;
+}
+
+.arch-card iframe {
+  width: 100%;
+  height: 400px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.arch-card h3 {
+  margin: 15px 0 8px;
+}
+
+.arch-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.arch-card .btn {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #38bdf8;
+  color: #000;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.arch-card .btn:hover {
+  background-color: #0ea5e9;
+  color: #fff;
+}
+
+/* Responsive Navbar toggle (optional if you already have it) */
+.menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .architecture-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
