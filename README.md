@@ -1,6 +1,6 @@
-# 🚀 Portfolio Website Deployment (AWS S3 + GitHub Actions OIDC)
+# 🚀 Website Deployment (AWS S3 + GitHub Actions OIDC)
 
-This project is a static portfolio website automatically deployed to **Amazon S3** using **GitHub Actions**. It features a modern, "passwordless" authentication flow using **OpenID Connect (OIDC)**.
+This project is a static website automatically deployed to **Amazon S3** using **GitHub Actions**. It features a modern, "passwordless" authentication flow using **OpenID Connect (OIDC)**.
 
 ## 🛠️ Architecture
 - **Storage:** Amazon S3 (Static Website Hosting)
